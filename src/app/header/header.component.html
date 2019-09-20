@@ -1,0 +1,18 @@
+<mat-toolbar color="primary" *ngIf="userIsAuthenticated">
+  <span><a [routerLink]="['/dashboard/'+ userName]">Dashboard</a></span>
+  <span class="spacer"></span>
+  <ul>
+    <li>
+      <a mat-button routerLink="/arena" routerLinkActive="mat-accent">Arena</a>
+    </li>
+    <li>
+      <a mat-button routerLink="/leaderboard" routerLinkActive="mat-accent">Leaderboard</a>
+    </li>
+    <li>
+      <a mat-button routerLink="/levels" routerLinkActive="mat-accent">Levels</a>
+    </li>
+    <li>
+      <button mat-button (click)="onLogout()">Logout</button>
+    </li>
+  </ul>
+</mat-toolbar>

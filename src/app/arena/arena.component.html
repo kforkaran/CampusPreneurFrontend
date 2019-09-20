@@ -1,0 +1,10 @@
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <img mat-card-image [src]="currentQuestion.imageUrl" *ngIf="!isLoading">
+  <form (submit)="onSubmitAnswer(form)" #form="ngForm" *ngIf="!isLoading">
+    <mat-form-field>
+      <input matInput type="text" name="answer" ngModel placeholder="Answer" required>
+    </mat-form-field>
+    <button mat-raised-button color="accent" type="submit" *ngIf="!isLoading">Submit</button>
+  </form>
+</mat-card>
